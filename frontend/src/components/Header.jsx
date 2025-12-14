@@ -5,17 +5,13 @@ const Header = ({ cart, onCartClick, user, onLoginClick, onAdminClick, onLogout 
 
   return (
     <header 
-      className="fixed top-0 left-0 right-0 z-50"
+      className="fixed top-0 left-0 right-0 z-50 w-full max-w-full rounded-none md:rounded-[50px]"
       style={{
         backgroundColor: 'rgba(255, 255, 255, 0.5)',
         backdropFilter: 'blur(8px)',
         WebkitBackdropFilter: 'blur(8px)',
         borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
-        boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
-        borderTopLeftRadius: '50px',
-        borderTopRightRadius: '50px',
-        borderBottomLeftRadius: '50px',
-        borderBottomRightRadius: '50px'
+        boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)'
       }}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">

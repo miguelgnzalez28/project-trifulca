@@ -48,15 +48,31 @@ export const getProductsFromDrive = async () => {
     const urlWithBypass = `${APPSCRIPT_URL}${APPSCRIPT_URL.includes('?') ? '&' : '?'}_ts=${ts}`
 
     console.log('Haciendo petición al Apps Script...', urlWithBypass)
-    const response = await fetch(urlWithBypass, {
+    
+    // Detectar si estamos en móvil para ajustar la estrategia
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    const fetchOptions = {
       method: 'GET',
-      headers: {
+      cache: 'no-store',
+      mode: 'cors',
+      credentials: 'omit'
+    };
+    
+    // En móviles, usar headers mínimos para evitar problemas de CORS preflight
+    if (isMobile) {
+      fetchOptions.headers = {
+        'Accept': 'application/json'
+      };
+      console.log('📱 Modo móvil: usando headers mínimos para evitar CORS preflight');
+    } else {
+      fetchOptions.headers = {
         'Accept': 'application/json',
         'Cache-Control': 'no-cache'
-      },
-      cache: 'no-store',
-      mode: 'cors'
-    })
+      };
+    }
+    
+    const response = await fetch(urlWithBypass, fetchOptions)
     
     console.log('Respuesta del servidor:', response.status, response.statusText)
     

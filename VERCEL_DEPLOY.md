@@ -47,3 +47,5 @@ Después del deploy, verifica que:
 - ✅ El build se completa sin errores
 - ✅ La aplicación carga correctamente
 - ✅ Las rutas funcionan (SPA routing)
+
+
