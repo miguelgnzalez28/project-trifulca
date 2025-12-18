@@ -49,3 +49,4 @@ Después del deploy, verifica que:
 - ✅ Las rutas funcionan (SPA routing)
 
 
+

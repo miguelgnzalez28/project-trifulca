@@ -49,28 +49,16 @@ export const getProductsFromDrive = async () => {
 
     console.log('Haciendo petición al Apps Script...', urlWithBypass)
     
-    // Detectar si estamos en móvil para ajustar la estrategia
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
+    // Usar headers simples para evitar preflight CORS en cualquier dispositivo
     const fetchOptions = {
       method: 'GET',
       cache: 'no-store',
       mode: 'cors',
-      credentials: 'omit'
-    };
-    
-    // En móviles, usar headers mínimos para evitar problemas de CORS preflight
-    if (isMobile) {
-      fetchOptions.headers = {
+      credentials: 'omit',
+      headers: {
         'Accept': 'application/json'
-      };
-      console.log('📱 Modo móvil: usando headers mínimos para evitar CORS preflight');
-    } else {
-      fetchOptions.headers = {
-        'Accept': 'application/json',
-        'Cache-Control': 'no-cache'
-      };
-    }
+      }
+    };
     
     const response = await fetch(urlWithBypass, fetchOptions)
     
