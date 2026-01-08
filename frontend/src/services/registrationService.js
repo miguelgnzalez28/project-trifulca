@@ -1,5 +1,5 @@
 // Servicio para enviar datos de registro a Google AppScript
-const APPSCRIPT_URL = "https://script.google.com/macros/s/AKfycby6QD2j4jPufk8iy3xTuo7v_IO_xUV2VwAj7xVRRhXPgrkthdtN1ndmnkqZXH1kFc1g/exec";
+const APPSCRIPT_URL = "https://script.google.com/macros/s/AKfycbzdpCEgaboTEc8q-yqSSrph2RaJxskNSL_4K_9GbzDjNkUbkjzzimnERu_JCIBJyqAd/exec";
 
 /**
  * Envía los datos de registro de un usuario a Google AppScript

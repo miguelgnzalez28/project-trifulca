@@ -3,7 +3,7 @@ export let mockProducts = [];
 
 const DEMO_APP_SCRIPT_URL =
   (typeof window !== 'undefined' && window.APPSCRIPT_URL) ||
-  'https://script.google.com/macros/s/AKfycbwJeBmEY53VYRy_axC-aVJ-rhXxHmTnWTbObJugG4G2soVW_Bo_SyUqXytu6oKtR8c/exec';
+  'https://script.google.com/macros/s/AKfycbzdpCEgaboTEc8q-yqSSrph2RaJxskNSL_4K_9GbzDjNkUbkjzzimnERu_JCIBJyqAd/exec';
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
 const PROXY_URL = `${BACKEND_URL}/api/products`;

@@ -2,7 +2,7 @@
 
 ## URL del AppScript
 ```
-https://script.google.com/macros/s/AKfycby6QD2j4jPufk8iy3xTuo7v_IO_xUV2VwAj7xVRRhXPgrkthdtN1ndmnkqZXH1kFc1g/exec
+https://script.google.com/macros/s/AKfycbzdpCEgaboTEc8q-yqSSrph2RaJxskNSL_4K_9GbzDjNkUbkjzzimnERu_JCIBJyqAd/exec
 ```
 
 ## Código necesario en Google Apps Script

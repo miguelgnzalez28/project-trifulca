@@ -391,7 +391,7 @@ async def get_products(request: Request):
     """Proxy para obtener productos desde Google Apps Script"""
     logger.info("Solicitud recibida en /api/products")
     try:
-        url = "https://script.google.com/macros/s/AKfycbwJeBmEY53VYRy_axC-aVJ-rhXxHmTnWTbObJugG4G2soVW_Bo_SyUqXytu6oKtR8c/exec"
+        url = "https://script.google.com/macros/s/AKfycbzdpCEgaboTEc8q-yqSSrph2RaJxskNSL_4K_9GbzDjNkUbkjzzimnERu_JCIBJyqAd/exec"
         logger.info(f"Obteniendo productos desde: {url}")
         async with httpx.AsyncClient(timeout=30.0, follow_redirects=True) as client:
             response = await client.get(url)
