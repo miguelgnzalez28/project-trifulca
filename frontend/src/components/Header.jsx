@@ -17,40 +17,65 @@ const Header = ({ cart, onCartClick, user, onLoginClick, onAdminClick, onLogout 
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex items-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <div 
+            className="flex items-center cursor-pointer -ml-4 sm:-ml-6 lg:-ml-8 hover:opacity-90 transition-opacity duration-300" 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onMouseEnter={(e) => {
+              const img = e.currentTarget.querySelector('img');
+              if (img) img.style.transform = 'scale(1.05)';
+            }}
+            onMouseLeave={(e) => {
+              const img = e.currentTarget.querySelector('img');
+              if (img) img.style.transform = 'scale(1)';
+            }}
+          >
             <div className="relative flex-shrink-0">
             <img 
               src="/logotipo.png" 
               alt="Ultimate Kits Logo" 
-              className="h-12 w-12 object-contain"
+              className="h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 object-contain"
               style={{
-                filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2))'
+                filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4)) brightness(1.1) contrast(1.1)',
+                transition: 'transform 0.3s ease'
               }}
             />
             </div>
-            <span className="ml-3 text-gray-800 text-xl tracking-wider" style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif"}}>ULTIMATE KITS</span>
+            <span 
+              className="ml-3 text-xl tracking-wider transition-colors duration-300 cursor-pointer" 
+              style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif", color: '#722F37'}}
+              onMouseEnter={(e) => e.target.style.color = '#D20000'}
+              onMouseLeave={(e) => e.target.style.color = '#722F37'}
+            >
+              ULTIMATE KITS
+            </span>
           </div>
 
           {/* Navegación central */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8 ml-12 lg:ml-20">
               <a 
               href="#topventas" 
-              className="text-gray-800 hover:text-primary-red transition-colors duration-300 cursor-pointer text-base"
-              style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif"}}
+              className="transition-colors duration-300 cursor-pointer text-base"
+              style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif", color: '#722F37'}}
+              onMouseEnter={(e) => e.target.style.color = '#D20000'}
+              onMouseLeave={(e) => e.target.style.color = '#722F37'}
               >
                 COLECCIONES
               </a>
               <a 
                 href="#topventas" 
-              className="text-gray-800 hover:text-primary-red transition-colors duration-300 cursor-pointer text-base"
-              style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif"}}
+              className="transition-colors duration-300 cursor-pointer text-base"
+              style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif", color: '#722F37'}}
+              onMouseEnter={(e) => e.target.style.color = '#D20000'}
+              onMouseLeave={(e) => e.target.style.color = '#722F37'}
               >
                 TOP VENTAS
               </a>
               <a 
                 href="#faq" 
-              className="text-gray-800 hover:text-primary-red transition-colors duration-300 cursor-pointer text-base"
-              style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif"}}
+              className="transition-colors duration-300 cursor-pointer text-base"
+              style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif", color: '#722F37'}}
+              onMouseEnter={(e) => e.target.style.color = '#D20000'}
+              onMouseLeave={(e) => e.target.style.color = '#722F37'}
               >
                 PREGUNTAS FRECUENTES
               </a>
@@ -61,7 +86,12 @@ const Header = ({ cart, onCartClick, user, onLoginClick, onAdminClick, onLogout 
             {/* User/Login button */}
             {user ? (
               <div className="flex items-center space-x-3">
-                <span className="text-base text-gray-800 hidden lg:block" style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif"}}>
+                <span 
+                  className="text-base hidden lg:block transition-colors duration-300 cursor-pointer" 
+                  style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif", color: '#722F37'}}
+                  onMouseEnter={(e) => e.target.style.color = '#D20000'}
+                  onMouseLeave={(e) => e.target.style.color = '#722F37'}
+                >
                   Hola, {user.name || user.email || 'Usuario'}
                 </span>
                 
@@ -103,11 +133,21 @@ const Header = ({ cart, onCartClick, user, onLoginClick, onAdminClick, onLogout 
             {/* Carrito */}
             <button 
               onClick={onCartClick}
-              className="text-gray-800 hover:text-primary-red transition-colors duration-300 flex items-center text-base relative"
-              style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif"}}
+              className="transition-colors duration-300 flex items-center text-base relative"
+              style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif", color: '#722F37'}}
+              onMouseEnter={(e) => {
+                e.target.style.color = '#D20000';
+                const svg = e.target.querySelector('svg');
+                if (svg) svg.style.color = '#D20000';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.color = '#722F37';
+                const svg = e.target.querySelector('svg');
+                if (svg) svg.style.color = '#722F37';
+              }}
             >
               CARRITO
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{color: '#722F37'}}>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
               {cartItemCount > 0 && (

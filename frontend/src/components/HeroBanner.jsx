@@ -29,21 +29,21 @@ const HeroBanner = () => {
             key={index}
             className={`absolute inset-0 transition-all duration-[2000ms] ease-in-out ${
               index === currentImage
-                ? 'opacity-30 scale-100'
+                ? 'opacity-70 scale-100'
                 : 'opacity-0 scale-110'
             }`}
             style={{
               backgroundImage: `url(${image}?w=1920&h=1080&fit=crop&auto=format&q=80)`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              filter: 'brightness(0.4) saturate(1.2)'
+              filter: 'brightness(0.7) saturate(1.2)'
             }}
           />
         ))}
         
         {/* Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-primary-red/40"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/30 to-primary-red/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
       </div>
 
       {/* Animated Floating Football Icons */}
@@ -55,40 +55,14 @@ const HeroBanner = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 text-center relative z-10">
-        {/* Logo principal */}
-        <div className="mb-10 animate-fade-in flex justify-center">
-          <div className="relative inline-flex items-center justify-center">
-            {/* Glow effect circular detrás del logo */}
-            <div className="absolute w-56 h-56 bg-gradient-radial from-white/20 to-transparent blur-2xl rounded-full"></div>
-            {/* Contenedor con glassmorphism - forma circular más pequeña */}
-            <div className="relative bg-white/95 backdrop-blur-md rounded-full p-4 shadow-2xl flex items-center justify-center">
-              <img 
-                src="/logotipo.png" 
-                alt="Ultimate Kits Logo" 
-                className="h-52 w-52 object-contain animate-pulse-slow"
-              />
-            </div>
-          </div>
-        </div>
-
+      <div className="container mx-auto px-6 text-center relative z-10 flex flex-col items-center justify-center min-h-[90vh]">
         {/* Título principal con efecto glitch */}
-        <h1 className="text-6xl md:text-7xl lg:text-8xl font-black mb-6 text-white animate-slide-up drop-shadow-2xl">
+        <h1 className="text-6xl md:text-7xl lg:text-8xl font-black mb-16 text-white animate-slide-up drop-shadow-2xl">
           ULTIMATE KITS
         </h1>
 
-        {/* Subtítulo */}
-        <p className="text-2xl md:text-3xl mb-4 text-primary-red font-bold animate-slide-up drop-shadow-lg" style={{animationDelay: '0.2s'}}>
-          Las Mejores Camisetas Deportivas
-        </p>
-
-        {/* Descripción */}
-        <p className="text-lg md:text-xl mb-12 text-white/90 max-w-2xl mx-auto animate-slide-up drop-shadow-md" style={{animationDelay: '0.4s'}}>
-          Descubre nuestra colección exclusiva de camisetas de los mejores equipos del mundo
-        </p>
-
         {/* CTA Buttons con efecto hover especial */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-scale-in" style={{animationDelay: '0.6s'}}>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-scale-in mb-16" style={{animationDelay: '0.2s'}}>
           <a 
             href="#topventas" 
             className="group relative bg-primary-red hover:bg-primary-red-dark text-white px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-primary-red/50 transform hover:scale-105 overflow-hidden"
@@ -104,30 +78,8 @@ const HeroBanner = () => {
           </a>
         </div>
 
-        {/* Badge/Trophy indicator con animación */}
-        <div className="mt-16 flex justify-center items-center space-x-8 animate-fade-in" style={{animationDelay: '0.8s'}}>
-          <div className="flex flex-col items-center transform hover:scale-110 transition-transform duration-300">
-            <div className="w-16 h-16 bg-gold rounded-full flex items-center justify-center text-3xl mb-2 shadow-2xl shadow-gold/50 animate-bounce-slow">
-              🏆
-            </div>
-            <span className="text-sm font-semibold text-white drop-shadow-md">Calidad Premium</span>
-          </div>
-          <div className="flex flex-col items-center transform hover:scale-110 transition-transform duration-300">
-            <div className="w-16 h-16 bg-primary-red rounded-full flex items-center justify-center text-3xl mb-2 shadow-2xl shadow-primary-red/50 animate-bounce-slow" style={{animationDelay: '0.2s'}}>
-              ⚽
-            </div>
-            <span className="text-sm font-semibold text-white drop-shadow-md">Auténticas</span>
-          </div>
-          <div className="flex flex-col items-center transform hover:scale-110 transition-transform duration-300">
-            <div className="w-16 h-16 bg-action-green rounded-full flex items-center justify-center text-3xl mb-2 shadow-2xl shadow-action-green/50 animate-bounce-slow" style={{animationDelay: '0.4s'}}>
-              ✓
-            </div>
-            <span className="text-sm font-semibold text-white drop-shadow-md">Garantizadas</span>
-          </div>
-        </div>
-
         {/* Progress Dots para el slider */}
-        <div className="mt-12 flex justify-center space-x-2">
+        <div className="mt-8 flex justify-center space-x-2">
           {footballerImages.map((_, index) => (
             <button
               key={index}

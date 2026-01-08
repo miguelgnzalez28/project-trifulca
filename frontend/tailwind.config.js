@@ -40,6 +40,11 @@ export default {
         // Colores adicionales
         'white': '#FFFFFF',
         'black': '#000000',
+        
+        // Vinotinto
+        'burgundy': '#722F37',
+        'burgundy-dark': '#5A252B',
+        'burgundy-light': '#8B3F47',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in-out',
