@@ -5,7 +5,7 @@ const Header = ({ cart, onCartClick, user, onLoginClick, onAdminClick, onLogout 
 
   return (
     <header 
-      className="fixed top-0 left-0 right-0 z-50 w-full max-w-full rounded-none md:rounded-[50px]"
+      className="fixed top-0 left-2 right-2 sm:left-3 sm:right-3 md:left-4 md:right-4 lg:left-6 lg:right-6 z-50 rounded-none md:rounded-[50px]"
       style={{
         backgroundColor: 'rgba(255, 255, 255, 0.5)',
         backdropFilter: 'blur(8px)',
@@ -14,11 +14,11 @@ const Header = ({ cart, onCartClick, user, onLoginClick, onAdminClick, onLogout 
         boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)'
       }}
     >
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="container mx-auto pl-0 pr-4 sm:pl-1 sm:pr-6 lg:pl-2 lg:pr-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div 
-            className="flex items-center cursor-pointer -ml-4 sm:-ml-6 lg:-ml-8 hover:opacity-90 transition-opacity duration-300" 
+            className="flex items-center cursor-pointer hover:opacity-90 transition-opacity duration-300 -ml-4 sm:-ml-3 md:-ml-2" 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             onMouseEnter={(e) => {
               const img = e.currentTarget.querySelector('img');
@@ -41,7 +41,7 @@ const Header = ({ cart, onCartClick, user, onLoginClick, onAdminClick, onLogout 
             />
             </div>
             <span 
-              className="ml-3 text-xl tracking-wider transition-colors duration-300 cursor-pointer" 
+              className="ml-3 text-3xl tracking-wider transition-colors duration-300 cursor-pointer" 
               style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif", color: '#722F37'}}
               onMouseEnter={(e) => e.target.style.color = '#D20000'}
               onMouseLeave={(e) => e.target.style.color = '#722F37'}
@@ -53,8 +53,8 @@ const Header = ({ cart, onCartClick, user, onLoginClick, onAdminClick, onLogout 
           {/* Navegación central */}
           <nav className="hidden md:flex items-center space-x-8 ml-12 lg:ml-20">
               <a 
-              href="#topventas" 
-              className="transition-colors duration-300 cursor-pointer text-base"
+              href="#colecciones" 
+              className="transition-colors duration-300 cursor-pointer text-xl"
               style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif", color: '#722F37'}}
               onMouseEnter={(e) => e.target.style.color = '#D20000'}
               onMouseLeave={(e) => e.target.style.color = '#722F37'}
@@ -63,7 +63,7 @@ const Header = ({ cart, onCartClick, user, onLoginClick, onAdminClick, onLogout 
               </a>
               <a 
                 href="#topventas" 
-              className="transition-colors duration-300 cursor-pointer text-base"
+              className="transition-colors duration-300 cursor-pointer text-xl"
               style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif", color: '#722F37'}}
               onMouseEnter={(e) => e.target.style.color = '#D20000'}
               onMouseLeave={(e) => e.target.style.color = '#722F37'}
@@ -72,7 +72,7 @@ const Header = ({ cart, onCartClick, user, onLoginClick, onAdminClick, onLogout 
               </a>
               <a 
                 href="#faq" 
-              className="transition-colors duration-300 cursor-pointer text-base"
+              className="transition-colors duration-300 cursor-pointer text-xl"
               style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif", color: '#722F37'}}
               onMouseEnter={(e) => e.target.style.color = '#D20000'}
               onMouseLeave={(e) => e.target.style.color = '#722F37'}
@@ -87,7 +87,7 @@ const Header = ({ cart, onCartClick, user, onLoginClick, onAdminClick, onLogout 
             {user ? (
               <div className="flex items-center space-x-3">
                 <span 
-                  className="text-base hidden lg:block transition-colors duration-300 cursor-pointer" 
+                  className="text-xl hidden lg:block transition-colors duration-300 cursor-pointer" 
                   style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif", color: '#722F37'}}
                   onMouseEnter={(e) => e.target.style.color = '#D20000'}
                   onMouseLeave={(e) => e.target.style.color = '#722F37'}
@@ -99,7 +99,7 @@ const Header = ({ cart, onCartClick, user, onLoginClick, onAdminClick, onLogout 
                 {user.is_admin && (
                   <button
                     onClick={onAdminClick}
-                    className="bg-[#FFC71F] hover:bg-[#FFD700] text-black px-4 py-2 rounded transition-all duration-300 text-base"
+                    className="bg-[#FFC71F] hover:bg-[#FFD700] text-black px-4 py-2 rounded transition-all duration-300 text-xl"
                     style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif"}}
                     title="Panel de Administrador"
                   >
@@ -111,7 +111,7 @@ const Header = ({ cart, onCartClick, user, onLoginClick, onAdminClick, onLogout 
                 {/* Logout button */}
                 <button
                   onClick={onLogout}
-                  className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded transition-all duration-300 text-base"
+                  className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded transition-all duration-300 text-xl"
                   style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif"}}
                   title="Cerrar Sesión"
                 >
@@ -133,7 +133,7 @@ const Header = ({ cart, onCartClick, user, onLoginClick, onAdminClick, onLogout 
             {/* Carrito */}
             <button 
               onClick={onCartClick}
-              className="transition-colors duration-300 flex items-center text-base relative"
+              className="transition-colors duration-300 flex items-center text-xl relative"
               style={{fontFamily: "'Bebas Neue', 'Heading Now', sans-serif", color: '#722F37'}}
               onMouseEnter={(e) => {
                 e.target.style.color = '#D20000';

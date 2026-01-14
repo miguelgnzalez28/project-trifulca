@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Header from './components/Header'
 import HeroBanner from './components/HeroBanner'
 import TopSalesSection from './components/TopSalesSection'
+import CollectionsSection from './components/CollectionsSection'
 import ProductGrid from './components/ProductGrid'
 import ProductDetail from './components/ProductDetail'
 import FAQ from './components/FAQ'
@@ -103,6 +104,7 @@ function App() {
       <main>
         <HeroBanner />
         <TopSalesSection onProductSelect={setSelectedProduct} />
+        <CollectionsSection onProductSelect={setSelectedProduct} />
         <ProductGrid onProductSelect={setSelectedProduct} />
         <FAQ />
         {selectedProduct && (
